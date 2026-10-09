@@ -1,0 +1,43 @@
+gpu_vision_inference:
+  ros__parameters:
+    input_topic: /camera/image_raw/compressed
+    annotated_topic: /vision/gpu/image_annotated/compressed
+    detections_topic: /vision/gpu/detections
+    diagnostics_topic: /diagnostics/vision_gpu
+
+    # Set model_path at launch to a YOLOv8 detection ONNX file.
+    model_path: ""
+    labels_path: ""
+    model_input_width: 640
+    model_input_height: 640
+    confidence_threshold: 0.35
+    nms_threshold: 0.45
+    output_has_objectness: false
+    boxes_are_normalized: false
+    require_gpu: true
+    allow_cpu_fallback: false
+    use_fp16: true
+    warmup_iterations: 2
+    max_detections: 100
+
+    annotated_jpeg_quality: 80
+    output_lifespan_ms: 250.0
+    latency_warning_ms: 150.0
+    stale_frame_drop_ms: 500.0
+    future_stamp_tolerance_ms: 50.0
+    no_frame_timeout_ms: 1000.0
+    max_compressed_input_bytes: 4194304
+    prefer_gpu_decode: true
+    require_gpu_decode: false
+    decode_warmup_width: 1280
+    decode_warmup_height: 720
+
+    expected_frame_rate_hz: 30.0
+    metrics_enabled: false
+    metrics_output_path: /tmp/vision_benchmark.csv
+    metrics_format: csv
+    metrics_run_id: default
+    metrics_queue_capacity: 8192
+    metrics_flush_interval_frames: 30
+    metrics_statistics_capacity: 1000000
+    metrics_append: false
