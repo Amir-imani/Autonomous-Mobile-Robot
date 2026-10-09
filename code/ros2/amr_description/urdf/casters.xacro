@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="caster_contact_frame" params="name x y base_link_height">
+    <joint name="${name}_caster_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="${name}_caster_link"/>
+      <origin xyz="${x} ${y} ${-base_link_height}" rpy="0 0 0"/>
+    </joint>
+    <link name="${name}_caster_link"/>
+  </xacro:macro>
+
+  <xacro:macro
+    name="amr_casters"
+    params="front_x rear_x centerline_y base_link_height">
+    <!--
+      These links define the measured ground-contact locations. Visual and collision
+      geometry will be added after the caster radius and mounting dimensions are measured.
+    -->
+    <xacro:caster_contact_frame name="front" x="${front_x}" y="${centerline_y}" base_link_height="${base_link_height}"/>
+    <xacro:caster_contact_frame name="rear" x="${rear_x}" y="${centerline_y}" base_link_height="${base_link_height}"/>
+  </xacro:macro>
+</robot>

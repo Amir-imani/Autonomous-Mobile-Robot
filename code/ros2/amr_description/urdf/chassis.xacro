@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro
+    name="amr_chassis"
+    params="plate_length plate_width plate_thickness standoff_clearance base_link_height base_joint_type">
+    <link name="base_footprint"/>
+    <joint name="base_footprint_joint" type="${base_joint_type}">
+      <parent link="base_footprint"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 ${base_link_height}" rpy="0 0 0"/>
+    </joint>
+    <link name="base_link">
+      <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="${plate_length} ${plate_width} ${plate_thickness}"/></geometry><material name="lower_deck_material"/></visual>
+      <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="${plate_length} ${plate_width} ${plate_thickness}"/></geometry></collision>
+    </link>
+    <joint name="upper_deck_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="upper_deck_link"/>
+      <origin xyz="0 0 ${standoff_clearance + plate_thickness}" rpy="0 0 0"/>
+    </joint>
+    <link name="upper_deck_link">
+      <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="${plate_length} ${plate_width} ${plate_thickness}"/></geometry><material name="upper_deck_material"/></visual>
+      <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="${plate_length} ${plate_width} ${plate_thickness}"/></geometry></collision>
+    </link>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot name="industrial_amr" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!--
+    The physical parameter file is the single source of truth for measured geometry.
+    The base_link origin is the drive-axle midpoint, one wheel radius above the floor.
+  -->
+  <xacro:arg
+    name="physical_parameters_file"
+    default="$(find amr_description)/config/physical_parameters.yaml"/>
+  <xacro:arg name="base_joint_type" default="fixed"/>
+  <xacro:property
+    name="physical_parameters_file_path"
+    value="$(arg physical_parameters_file)"/>
+  <xacro:property
+    name="physical"
+    value="${xacro.load_yaml(physical_parameters_file_path)}"/>
+
+  <xacro:include filename="$(find amr_description)/urdf/inertial_macros.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/chassis.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/drivetrain.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/casters.xacro"/>
+  <xacro:include filename="$(find amr_description)/urdf/sensors.xacro"/>
+
+  <material name="lower_deck_material"><color rgba="0.10 0.12 0.15 1.0"/></material>
+  <material name="upper_deck_material"><color rgba="0.18 0.22 0.28 1.0"/></material>
+  <material name="wheel_material"><color rgba="0.03 0.03 0.03 1.0"/></material>
+
+  <xacro:amr_chassis
+    plate_length="${physical['chassis']['length']}"
+    plate_width="${physical['chassis']['width']}"
+    plate_thickness="${physical['chassis']['plate_thickness']}"
+    standoff_clearance="${physical['chassis']['standoff_clearance']}"
+    base_link_height="${physical['drivetrain']['wheel_radius']}"
+    base_joint_type="$(arg base_joint_type)"/>
+
+  <xacro:amr_drivetrain
+    wheel_radius="${physical['drivetrain']['wheel_radius']}"
+    wheel_width="${physical['drivetrain']['wheel_width']}"
+    wheel_track="${physical['drivetrain']['wheel_track']}"/>
+
+  <xacro:amr_casters
+    front_x="${physical['casters']['front_x']}"
+    rear_x="${physical['casters']['rear_x']}"
+    centerline_y="${physical['casters']['centerline_y']}"
+    base_link_height="${physical['drivetrain']['wheel_radius']}"/>
+
+  <xacro:amr_sensors
+    lidar_xyz="${physical['sensors']['lidar']['x']} ${physical['sensors']['lidar']['y']} ${physical['sensors']['lidar']['z'] - physical['drivetrain']['wheel_radius']}"
+    lidar_rpy="${physical['sensors']['lidar']['roll']} ${physical['sensors']['lidar']['pitch']} ${physical['sensors']['lidar']['yaw']}"
+    camera_xyz="${physical['sensors']['camera']['x']} ${physical['sensors']['camera']['y']} ${physical['sensors']['camera']['z'] - physical['drivetrain']['wheel_radius']}"
+    camera_rpy="${physical['sensors']['camera']['roll']} ${physical['sensors']['camera']['pitch']} ${physical['sensors']['camera']['yaw']}"
+    imu_xyz="${physical['sensors']['imu']['x']} ${physical['sensors']['imu']['y']} ${physical['sensors']['imu']['z'] - physical['drivetrain']['wheel_radius']}"
+    imu_rpy="${physical['sensors']['imu']['roll']} ${physical['sensors']['imu']['pitch']} ${physical['sensors']['imu']['yaw']}"
+    laser_lower="${physical['joints']['laser_servo']['lower']}"
+    laser_upper="${physical['joints']['laser_servo']['upper']}"
+    laser_effort="${physical['joints']['laser_servo']['effort']}"
+    laser_velocity="${physical['joints']['laser_servo']['velocity']}"
+    laser_damping="${physical['joints']['laser_servo']['damping']}"
+    camera_lower="${physical['joints']['camera_tilt']['lower']}"
+    camera_upper="${physical['joints']['camera_tilt']['upper']}"
+    camera_effort="${physical['joints']['camera_tilt']['effort']}"
+    camera_velocity="${physical['joints']['camera_tilt']['velocity']}"
+    camera_damping="${physical['joints']['camera_tilt']['damping']}"/>
+</robot>
