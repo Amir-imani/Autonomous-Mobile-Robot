@@ -1,0 +1,24 @@
+mock_camera_publisher:
+  ros__parameters:
+    source_type: video_file
+    video_path: ""
+    webcam_device: /dev/video0
+    test_pattern: smpte
+    camera_name: benchmark_camera
+    camera_info_url: ""
+    optical_frame_id: camera_optical_frame
+    image_topic: /camera/image_raw/compressed
+    camera_info_topic: /camera/camera_info
+    width: 1280
+    height: 720
+    frame_rate: 30
+    jpeg_quality: 85
+    image_lifespan_ms: 150.0
+    timestamp_warning_ms: 100.0
+    max_encoded_frame_bytes: 4194304
+    max_frames: 0
+    wait_for_subscriber: true
+    subscriber_wait_timeout_s: 30.0
+    shutdown_grace_ms: 250.0
+    require_calibration: false
+    strict_calibration_dimensions: true
