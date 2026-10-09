@@ -1,0 +1,34 @@
+pi_camera_publisher:
+  ros__parameters:
+    camera_name: front_camera
+    camera_device_name: ""
+    camera_info_url: ""
+    optical_frame_id: camera_optical_frame
+    image_topic: /camera/image_raw/compressed
+    camera_info_topic: /camera/camera_info
+
+    width: 1280
+    height: 720
+    frame_rate: 30
+    jpeg_quality: 85
+    image_lifespan_ms: 150.0
+    capture_latency_warning_ms: 100.0
+    max_encoded_frame_bytes: 4194304
+    require_valid_sensor_pts: true
+    require_calibration: false
+    strict_calibration_dimensions: true
+
+    # Leave empty to use the generated libcamerasrc -> jpegenc -> appsink pipeline.
+    gstreamer_pipeline: ""
+
+    tilt_feedback_topic: /joint_states
+    tilt_joint_name: camera_tilt_joint
+    tilt_min_rad: -0.34906585040
+    tilt_max_rad: 1.22173047640
+    tilt_feedback_timeout_ms: 500.0
+
+    # robot_state_publisher currently owns camera_tilt_mount_link -> camera_link.
+    # Enable this only after removing that competing TF authority.
+    publish_tilt_tf: false
+    tilt_parent_frame: camera_tilt_mount_link
+    tilt_child_frame: camera_link

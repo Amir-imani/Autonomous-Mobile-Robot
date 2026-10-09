@@ -1,0 +1,8 @@
+# Pixel-coordinate bounding box in the source image.
+uint32 class_id
+string class_name
+float32 confidence
+float32 x_min
+float32 y_min
+float32 x_max
+float32 y_max
