@@ -1,0 +1,53 @@
+# All positions follow REP-105 and use metres and radians.
+chassis:
+  length: 0.26
+  width: 0.26
+  plate_thickness: 0.003
+  standoff_clearance: 0.060
+
+drivetrain:
+  wheel_radius: 0.03335
+  wheel_width: 0.010
+  wheel_track: 0.28
+
+casters:
+  front_x: 0.10
+  rear_x: -0.10
+  centerline_y: 0.0
+
+sensors:
+  lidar:
+    x: 0.108
+    y: 0.0
+    z: 0.185
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  camera:
+    x: 0.16
+    y: 0.019
+    z: 0.15
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  imu:
+    x: 0.10
+    y: -0.05
+    z: 0.11
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
+
+joints:
+  laser_servo:
+    lower: -1.57079632679
+    upper: 1.57079632679
+    effort: 1.0
+    velocity: 1.5
+    damping: 0.05
+  camera_tilt:
+    lower: -0.34906585040
+    upper: 1.22173047640
+    effort: 1.0
+    velocity: 1.0
+    damping: 0.10
