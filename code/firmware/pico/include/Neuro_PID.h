@@ -6,7 +6,6 @@
 
 class Neuro_PID {
 private:
-    // ابعاد شبکه عصبی
     static const int NUM_INPUTS = 3;   
     static const int NUM_HIDDEN = 5;   
     static const int NUM_OUTPUTS = 3; 
