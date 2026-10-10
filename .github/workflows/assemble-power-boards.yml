@@ -1,0 +1,37 @@
+name: Assemble Power Board Designs
+on:
+  push:
+    paths: [".upload_parts/power_boards/**"]
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Assemble and verify
+        shell: python
+        run: |
+          import base64, gzip, hashlib, json
+          from pathlib import Path
+          root=Path(".upload_parts/power_boards")
+          manifest=json.loads((root/"manifest.json").read_text())
+          for item in manifest["files"]:
+              encoded="".join((root/p).read_text(encoding="ascii").strip() for p in item["parts"])
+              payload=base64.b64decode(encoded)
+              if item.get("gzip"): payload=gzip.decompress(payload)
+              assert hashlib.sha256(payload).hexdigest()==item["sha256"],item["target"]
+              assert len(payload)==item["size"],item["target"]
+              target=Path(item["target"]); target.parent.mkdir(parents=True,exist_ok=True)
+              target.write_bytes(payload)
+              print(f"Verified {target}: {len(payload)} bytes")
+      - name: Clear staging files
+        run: rm -rf .upload_parts/power_boards
+      - name: Commit files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || (git commit -m "Add main and motor power distribution KiCad projects" && git push)
