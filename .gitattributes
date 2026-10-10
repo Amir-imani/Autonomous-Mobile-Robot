@@ -1,4 +1,5 @@
 * text=auto
+
 *.sh text eol=lf
 *.py text eol=lf
 *.cpp text eol=lf
@@ -8,3 +9,16 @@
 *.yaml text eol=lf
 *.yml text eol=lf
 *.md text eol=lf
+*.kicad_pro text eol=lf
+*.kicad_sch text eol=lf
+*.kicad_pcb text eol=lf
+
+# Manufacturing outputs are snapshots; do not normalize them on future commits.
+*.gbr -text
+*.drl -text
+*.gbrjob -text
+
+# Rendered documentation assets.
+*.png -text
+*.jpg -text
+*.jpeg -text
