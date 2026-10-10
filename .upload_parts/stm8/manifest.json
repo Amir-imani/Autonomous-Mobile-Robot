@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "target": "hardware/stm8_fan_controller/source/Fan_robot_V3.kicad_pro",
+      "parts": [
+        "00_Fan_robot_V3.kicad_pro.part000.b64"
+      ],
+      "sha256": "758977458c8e6bbfba6ffd515bebc7452b8ce5e44b5c8a9fdb3e67caffbde5e4",
+      "size": 16683,
+      "gzip": true
+    },
+    {
+      "target": "hardware/stm8_fan_controller/source/Fan_robot_V3.kicad_sch",
+      "parts": [
+        "01_Fan_robot_V3.kicad_sch.part000.b64",
+        "01_Fan_robot_V3.kicad_sch.part001.b64",
+        "01_Fan_robot_V3.kicad_sch.part002.b64"
+      ],
+      "sha256": "cea5d4a0c96099e72ac8192664e1d017b1a2074c917b7b61e6dd0a2fcb50ef09",
+      "size": 227881,
+      "gzip": true
+    },
+    {
+      "target": "hardware/stm8_fan_controller/source/Fan_robot_V3.kicad_pcb",
+      "parts": [
+        "02_Fan_robot_V3.kicad_pcb.part000.b64",
+        "02_Fan_robot_V3.kicad_pcb.part001.b64",
+        "02_Fan_robot_V3.kicad_pcb.part002.b64",
+        "02_Fan_robot_V3.kicad_pcb.part003.b64",
+        "02_Fan_robot_V3.kicad_pcb.part004.b64",
+        "02_Fan_robot_V3.kicad_pcb.part005.b64",
+        "02_Fan_robot_V3.kicad_pcb.part006.b64",
+        "02_Fan_robot_V3.kicad_pcb.part007.b64"
+      ],
+      "sha256": "413b951505148849156f1ef1fd8fe1e869bdf01e0b05feae6b047f4a1ae812ad",
+      "size": 494917,
+      "gzip": true
+    },
+    {
+      "target": "hardware/stm8_fan_controller/images/pcb_3d_top.jpg",
+      "parts": [
+        "03_pcb_3d_top.jpg.part000.b64",
+        "03_pcb_3d_top.jpg.part001.b64",
+        "03_pcb_3d_top.jpg.part002.b64",
+        "03_pcb_3d_top.jpg.part003.b64",
+        "03_pcb_3d_top.jpg.part004.b64",
+        "03_pcb_3d_top.jpg.part005.b64",
+        "03_pcb_3d_top.jpg.part006.b64",
+        "03_pcb_3d_top.jpg.part007.b64",
+        "03_pcb_3d_top.jpg.part008.b64"
+      ],
+      "sha256": "c7f4efface7e5df4364c906b2fa38f7485b24f02ebba6dcf3c3ef464ce875d30",
+      "size": 127363,
+      "gzip": true
+    },
+    {
+      "target": "hardware/stm8_fan_controller/schematic/Fan_robot_V3.pdf",
+      "parts": [
+        "04_Fan_robot_V3.pdf.part000.b64",
+        "04_Fan_robot_V3.pdf.part001.b64",
+        "04_Fan_robot_V3.pdf.part002.b64",
+        "04_Fan_robot_V3.pdf.part003.b64"
+      ],
+      "sha256": "ce8cbece4d866293650fa1a61b2eb5835f084cfcb6354bf044f0f80a931cdcab",
+      "size": 154878,
+      "gzip": true
+    }
+  ]
+}
