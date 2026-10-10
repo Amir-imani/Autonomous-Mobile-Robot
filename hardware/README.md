@@ -30,3 +30,14 @@ Included:
 - README describing the protection role and thesis-use notes
 
 Additional robot PCBs, BOMs, fabrication notes, and assembly documentation will be added here as their final design snapshots are prepared.
+
+### STM8 Dual-Channel Temperature and Fan Controller
+
+[Open the STM8 fan controller directory](stm8_fan_controller/)
+
+Included:
+- Editable KiCad project, schematic and PCB design
+- One-page PDF schematic
+- Top-side 3D board render
+
+**Thesis status:** Board fabricated and mounted on the robot, but not used for active control or experimental validation. Gerber, drill, BOM and firmware were not supplied with this package.
