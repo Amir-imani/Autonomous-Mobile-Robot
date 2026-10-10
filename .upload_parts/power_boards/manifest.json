@@ -1,0 +1,60 @@
+{
+  "files": [
+    {
+      "target": "hardware/main_power_distribution/source/Input Power_robot.kicad_pcb",
+      "parts": [
+        "main_power_distribution_Input Power_robot_kicad_pcb_000.b64",
+        "main_power_distribution_Input Power_robot_kicad_pcb_001.b64",
+        "main_power_distribution_Input Power_robot_kicad_pcb_002.b64"
+      ],
+      "gzip": true,
+      "sha256": "b17c5b2681ef2da6d50382ae65128f96870f79025ba3ff1811ec0892ae1d1491",
+      "size": 308862
+    },
+    {
+      "target": "hardware/main_power_distribution/source/Input Power_robot.kicad_pro",
+      "parts": [
+        "main_power_distribution_Input Power_robot_kicad_pro_000.b64"
+      ],
+      "gzip": true,
+      "sha256": "11a9efc83317d6b6719c16826767492b52143131a0c90f4b10ba2c49e141c865",
+      "size": 15688
+    },
+    {
+      "target": "hardware/main_power_distribution/source/Input Power_robot.kicad_sch",
+      "parts": [
+        "main_power_distribution_Input Power_robot_kicad_sch_000.b64"
+      ],
+      "gzip": true,
+      "sha256": "618992f9b5bbcb1721d2d59309c8d0878453bb45aad2519a9c95e6553dc0582f",
+      "size": 58159
+    },
+    {
+      "target": "hardware/motor_power_distribution/source/Motor_P_robot.kicad_pcb",
+      "parts": [
+        "motor_power_distribution_Motor_P_robot_kicad_pcb_000.b64"
+      ],
+      "gzip": true,
+      "sha256": "be017ac0765c3163d63852c25a597d2ddf3a6a036b67a05ba5e0a1f98b3884f4",
+      "size": 113711
+    },
+    {
+      "target": "hardware/motor_power_distribution/source/Motor_P_robot.kicad_pro",
+      "parts": [
+        "motor_power_distribution_Motor_P_robot_kicad_pro_000.b64"
+      ],
+      "gzip": true,
+      "sha256": "9bfcd04247e6ea4153006831979766d4358f4e35916241b4c6e9c855dc0f2ced",
+      "size": 13776
+    },
+    {
+      "target": "hardware/motor_power_distribution/source/Motor_P_robot.kicad_sch",
+      "parts": [
+        "motor_power_distribution_Motor_P_robot_kicad_sch_000.b64"
+      ],
+      "gzip": true,
+      "sha256": "047d08ba184511ff8bf03f13a2f3808194c4bb4408b52ec44e2da7b4c62c7c3f",
+      "size": 30603
+    }
+  ]
+}
