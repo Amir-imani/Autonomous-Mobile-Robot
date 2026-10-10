@@ -1,0 +1,172 @@
+{
+  "files": [
+    {
+      "source": "/mnt/data/pico_hw/RP_Pico_robot.kicad_pcb",
+      "target": "hardware/pico_carrier_board/source/RP_Pico_robot.kicad_pcb",
+      "gzip": true,
+      "sha256": "a929723f1be27d9098993e618e9046be4b0cfb80303b0665c6d9985663aa5c07",
+      "size": 1104822,
+      "parts": [
+        "00_RP_Pico_robot.kicad_pcb.part000.b64",
+        "00_RP_Pico_robot.kicad_pcb.part001.b64",
+        "00_RP_Pico_robot.kicad_pcb.part002.b64",
+        "00_RP_Pico_robot.kicad_pcb.part003.b64",
+        "00_RP_Pico_robot.kicad_pcb.part004.b64",
+        "00_RP_Pico_robot.kicad_pcb.part005.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-B_Cu.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-B_Cu.gbr",
+      "gzip": true,
+      "sha256": "86b4e4af75682b3483f2d29e636b0f1e0b902bef9e6a9295814b130455f7e0e3",
+      "size": 385210,
+      "parts": [
+        "01_RP_Pico_robot-B_Cu.gbr.part000.b64",
+        "01_RP_Pico_robot-B_Cu.gbr.part001.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-B_Mask.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-B_Mask.gbr",
+      "gzip": true,
+      "sha256": "3cdc1bb9bad15b7037ea78b94e3e4e71d54c4f98726fd8cf3ee880c6e1e9dfb1",
+      "size": 10605,
+      "parts": [
+        "02_RP_Pico_robot-B_Mask.gbr.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-B_Paste.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-B_Paste.gbr",
+      "gzip": true,
+      "sha256": "c862b249c4c538e3f24c89b731d216cdfa7da30b1b29f0dc79268489ed823ea7",
+      "size": 3194,
+      "parts": [
+        "03_RP_Pico_robot-B_Paste.gbr.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-B_Silkscreen.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-B_Silkscreen.gbr",
+      "gzip": true,
+      "sha256": "6fa68b6def9d4365b07174d02e5642a685016c2057dbcdfea9f7e1feeebc6c30",
+      "size": 91634,
+      "parts": [
+        "04_RP_Pico_robot-B_Silkscreen.gbr.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-Edge_Cuts.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-Edge_Cuts.gbr",
+      "gzip": true,
+      "sha256": "6604867a01b4ff1a75fdc6aa83f5831d7294ac1e852489b705d81b3e19da4ea2",
+      "size": 621,
+      "parts": [
+        "05_RP_Pico_robot-Edge_Cuts.gbr.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-F_Cu.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-F_Cu.gbr",
+      "gzip": true,
+      "sha256": "fbb7a79e356bd179735dc65aa10e9fb083ab1fe6b1521512738dea89a6c9c792",
+      "size": 235457,
+      "parts": [
+        "06_RP_Pico_robot-F_Cu.gbr.part000.b64",
+        "06_RP_Pico_robot-F_Cu.gbr.part001.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-F_Mask.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-F_Mask.gbr",
+      "gzip": true,
+      "sha256": "98d5a2834130fc74186106c8ca27cc102c8b8ca08e7e3fd109b59f103827ef39",
+      "size": 11750,
+      "parts": [
+        "07_RP_Pico_robot-F_Mask.gbr.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-F_Paste.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-F_Paste.gbr",
+      "gzip": true,
+      "sha256": "241dbc7330e0ba5498595d2212ad2ce3510e707f8d82bfaced7f8fbc4d90885b",
+      "size": 1391,
+      "parts": [
+        "08_RP_Pico_robot-F_Paste.gbr.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-F_Silkscreen.gbr",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-F_Silkscreen.gbr",
+      "gzip": true,
+      "sha256": "fd2ed01809ba6cabcc88b6a7d97346a8f7bf6a294ac6c30f9c2eeac1eb8612b0",
+      "size": 65308,
+      "parts": [
+        "09_RP_Pico_robot-F_Silkscreen.gbr.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-job.gbrjob",
+      "target": "hardware/pico_carrier_board/fabrication/gerber/RP_Pico_robot-job.gbrjob",
+      "gzip": true,
+      "sha256": "f28c407da1c95fae460a70388f656a8840653dbc07f051a4a233577e8b0a655f",
+      "size": 2915,
+      "parts": [
+        "10_RP_Pico_robot-job.gbrjob.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-NPTH.drl",
+      "target": "hardware/pico_carrier_board/fabrication/drill/RP_Pico_robot-NPTH.drl",
+      "gzip": true,
+      "sha256": "9ebca00ec6788b6c556d5983dfc0b0b85c62d9866e1da64264bf55fddd81a28b",
+      "size": 478,
+      "parts": [
+        "11_RP_Pico_robot-NPTH.drl.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw/gerber/RP_Pico_robot-PTH.drl",
+      "target": "hardware/pico_carrier_board/fabrication/drill/RP_Pico_robot-PTH.drl",
+      "gzip": true,
+      "sha256": "fda29e4a22cb8d573b04e6d80ef4031fd5c0f53a648151ddd46143d82e912c11",
+      "size": 3493,
+      "parts": [
+        "12_RP_Pico_robot-PTH.drl.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw_upload2/pcb_3d_top.jpg",
+      "target": "hardware/pico_carrier_board/images/pcb_3d_top.jpg",
+      "gzip": false,
+      "sha256": "f566430b09fdd511ecaf716d610889e1af03768bd4a638518b1fc362789f345c",
+      "size": 43928,
+      "parts": [
+        "13_pcb_3d_top.jpg.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw_upload2/pcb_3d_bottom.jpg",
+      "target": "hardware/pico_carrier_board/images/pcb_3d_bottom.jpg",
+      "gzip": false,
+      "sha256": "684439c849751ad6c8dcdfee784096ddc38839c46bebf2cde24084a93a8fb955",
+      "size": 35343,
+      "parts": [
+        "14_pcb_3d_bottom.jpg.part000.b64"
+      ]
+    },
+    {
+      "source": "/mnt/data/pico_hw_upload2/pcb_layout_editor.jpg",
+      "target": "hardware/pico_carrier_board/images/pcb_layout_editor.jpg",
+      "gzip": false,
+      "sha256": "ff5aac8bd6c52ba071057c2e800935b18824fbd17d16b79dd25b07581d32ecb0",
+      "size": 68106,
+      "parts": [
+        "15_pcb_layout_editor.jpg.part000.b64",
+        "15_pcb_layout_editor.jpg.part001.b64"
+      ]
+    }
+  ]
+}
