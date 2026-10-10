@@ -11,6 +11,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Reject committed generated/build artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          bad="$(git ls-files | grep -E '(^|/)(__pycache__|\.pio|build|install|log)/|\.(pyc|o|obj|exe)$' || true)"
+          if [[ -n "$bad" ]]; then
+            printf 'Generated artifacts must not be committed:\n%s\n' "$bad"
+            exit 1
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -19,17 +29,6 @@ jobs:
       - name: Compile Python sources
         run: |
           python -m compileall -q code
-
-      - name: Reject generated/build artifacts
-        shell: bash
-        run: |
-          set -euo pipefail
-          bad="$(find . -type f \( -name '*.pyc' -o -name '*.o' -o -name '*.obj' -o -name '*.exe' \) -print)"
-          bad_dirs="$(find . -type d \( -name '__pycache__' -o -name '.pio' -o -name build -o -name install -o -name log \) -print)"
-          if [[ -n "$bad$bad_dirs" ]]; then
-            printf 'Generated artifacts must not be committed:\n%s\n%s\n' "$bad" "$bad_dirs"
-            exit 1
-          fi
 
       - name: Check expected thesis entry points
         shell: bash
