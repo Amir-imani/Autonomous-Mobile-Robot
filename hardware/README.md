@@ -41,3 +41,13 @@ Included:
 - Top-side 3D board render
 
 **Thesis status:** Board fabricated and mounted on the robot, but not used for active control or experimental validation. Gerber, drill, BOM and firmware were not supplied with this package.
+
+### Main Power Distribution Board
+
+[Open main power board](main_power_distribution/) — power input, fuse protection, distribution and INA-module measurement mounting. Original KiCad project, schematic and PCB source.
+
+### Motor Power Distribution Board
+
+[Open motor power board](motor_power_distribution/) — fused motor power routing and INA-module measurement mounting. Original KiCad project, schematic and PCB source.
+
+For these two boards, photographs, Gerber/drill sets and BOMs were not included in the supplied ZIPs. They can be added separately after final review.
