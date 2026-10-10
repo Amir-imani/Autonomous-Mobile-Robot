@@ -16,4 +16,17 @@ Included:
 - Top and bottom 3D renders
 - PCB Editor layout image
 
-Additional robot PCBs, BOMs, schematics, fabrication notes, and assembly documentation will be added here as their final design snapshots are prepared.
+### Raspberry Pi 5 Overvoltage Protection Board
+
+[Open the Raspberry Pi 5 protection board directory](raspberry_pi5_overvoltage_protection/)
+
+Included:
+
+- KiCad project, schematic, and PCB layout
+- Complete two-layer Gerber set
+- PTH and NPTH drill files
+- 3D PCB render
+- Schematic view
+- README describing the protection role and thesis-use notes
+
+Additional robot PCBs, BOMs, fabrication notes, and assembly documentation will be added here as their final design snapshots are prepared.
