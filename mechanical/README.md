@@ -1,6 +1,6 @@
 # Mechanical design — SolidWorks and manufacturing references
 
-Custom mechanical parts of the differential-drive robot are organized by assembly, with consistent basenames for CAD sources, STL exports and PDF drawings. See [Appendix C index](../docs/APPENDIX_MECHANICAL_INDEX.md) for **quantity, material, purpose and original filenames**.
+Custom mechanical parts of the differential-drive robot are organized by assembly, with consistent basenames for CAD sources, STL exports and PDF drawings. See [Appendix C index](../docs/APPENDIX_MECHANICAL_INDEX.md) for **quantity, material and fabrication guidance**.
 
 | Directory | Part group | Make per robot | Material |
 |---|---|---:|---|
