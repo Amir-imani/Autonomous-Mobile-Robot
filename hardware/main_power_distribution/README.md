@@ -1,16 +1,13 @@
 # Main Power Distribution Board
 
-Custom robot power input and distribution PCB designed in KiCad.
+The main power PCB provides input routing, fuse protection, transient suppression, filtering/bulk capacitors and connection points for an INA-series voltage/current monitoring module. Electrical values and pin assignments are defined in the editable schematic.
 
-The board includes input power routing, fuse protection, transient suppression, bulk/filter capacitors and connections for current/voltage monitoring through an INA monitoring module. See the editable schematic for actual component values and wiring.
+## Design files
 
-## Files
-- `source/Input Power_robot.kicad_pro`
-- `source/Input Power_robot.kicad_sch`
-- `source/Input Power_robot.kicad_pcb`
+- [KiCad schematic](source/Input%20Power_robot.kicad_sch)
+- [KiCad PCB](source/Input%20Power_robot.kicad_pcb)
+- [KiCad project](source/Input%20Power_robot.kicad_pro)
 
-## Documentation status
+## Manufacturing
 
-Only original KiCad design sources were supplied. **No Gerber, drill, BOM, assembly drawing or board photographs were provided**; none have been invented. The populated INA module is a distinct mounted assembly; verify its exact part before specifying the final BOM.
-
-For manufacturing, run ERC/DRC and generate Gerber/drill from the reviewed source revision.
+The editable KiCad source is the design reference. To manufacture a board, inspect footprints and connector assignments, run ERC/DRC, and generate Gerber/drill outputs from the approved board revision. The mounted INA-series measurement module should be identified from the physical assembly when compiling a final BOM.
