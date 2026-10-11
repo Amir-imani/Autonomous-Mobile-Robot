@@ -1,23 +1,21 @@
 # Appendix C — Mechanical design and fabrication index
 
-This index identifies the CAD parts and drawing exports in the reorganized thesis mechanical source tree. The 21 original binary files were **moved and renamed without editing their blob contents**. See the project history for the legacy filenames.
+The robot's mechanical sources are arranged by subsystem. The quantities refer to one complete robot; all material specifications below correspond to the documented build.
 
-## Structured files and assembly quantities
+## Parts, quantities and materials
 
-| Subsystem | File basename and directory | Quantity per robot | Material / manufacturing | Original file(s) |
-|---|---|---:|---|---|
-| Chassis, lower (first) deck | [`chassis/lower_deck/lower_chassis_plate`](../mechanical/chassis/lower_deck/) | 1 | 3 mm MDF, laser cut | `1.pdf` and `2.SLDPRT` |
-| Chassis, upper (second) deck | [`chassis/upper_deck/upper_chassis_plate`](../mechanical/chassis/upper_deck/) | 1 | 3 mm MDF, laser cut | `2.pdf` and `Part21.SLDPRT` |
-| Motor mounting bracket | [`motor_mounts/motor_mount_bracket`](../mechanical/motor_mounts/) | 4 | ABS, 3D printed | `4.1.SLDPRT`, `4.1.STL`, `motor.pdf` |
-| Motor-shaft-to-magnet coupler | [`encoder_couplers/magnet_shaft_coupler`](../mechanical/encoder_couplers/) | 2 | ABS-like resin, 3D printed | `mag.SLDPRT`, `mag.STL`, `magnet.pdf` |
-| AS5600 encoder bracket | [`sensor_mounts/as5600_encoder_mount`](../mechanical/sensor_mounts/) | 2 | PLA+, 3D printed | `AS5600.SLDPRT`, `AS5600.STL`, `AS5600.pdf` |
-| Camera bracket | [`sensor_mounts/camera_mount`](../mechanical/sensor_mounts/) | 1 | PLA+, 3D printed | `camera.SLDPRT`, `camera.STL`, `camera holder.pdf` |
-| LiDAR bracket | [`sensor_mounts/lidar_mount`](../mechanical/sensor_mounts/) | 1 | PLA+, 3D printed | `LiDAR.SLDPRT`, `LiDAR.STL`, `LiDaR.pdf` |
-| Raspberry Pi 5 fan duct and airflow guide | [`thermal_airflow/raspberry_pi5_fan_duct`](../mechanical/thermal_airflow/) | 1 assembled set (multiple interlocking pieces) | 3 mm MDF, laser cut | `Side.SLDPRT`, `Fan1.pdf` |
+| Part / subsystem | Source folder | Quantity | Material and process |
+|---|---|---:|---|
+| First (lower) chassis deck | [`chassis/lower_deck/`](../mechanical/chassis/lower_deck/) | 1 | 3 mm MDF, laser cut |
+| Second (upper) chassis deck | [`chassis/upper_deck/`](../mechanical/chassis/upper_deck/) | 1 | 3 mm MDF, laser cut |
+| Symmetrical motor mount bracket | [`motor_mounts/`](../mechanical/motor_mounts/) | 4 | ABS, 3D printed |
+| Rotating magnet-to-motor-shaft coupler | [`encoder_couplers/`](../mechanical/encoder_couplers/) | 2 | ABS-like resin, 3D printed |
+| AS5600 encoder mount | [`sensor_mounts/`](../mechanical/sensor_mounts/) | 2 | PLA+, 3D printed |
+| Camera mount | [`sensor_mounts/`](../mechanical/sensor_mounts/) | 1 | PLA+, 3D printed |
+| LiDAR mount | [`sensor_mounts/`](../mechanical/sensor_mounts/) | 1 | PLA+, 3D printed |
+| Raspberry Pi 5 fan airflow guide | [`thermal_airflow/`](../mechanical/thermal_airflow/) | 1 complete multipart assembly | 3 mm MDF, laser cut |
 
-**User-confirmed identification:** `1.pdf` and `2.SLDPRT` describe the **first/lower** chassis deck, while `2.pdf` and `Part21.SLDPRT` describe the **second/upper** deck. `Side.SLDPRT` and `Fan1.pdf` are two representations of one multipart duct design, and `4.1` is the four-copy motor bracket.
-
-### File structure
+## File structure
 
 ```text
 mechanical/
@@ -45,24 +43,20 @@ mechanical/
     └── raspberry_pi5_fan_duct.pdf
 ```
 
-## Mechanical design notes
+## Fabrication and assembly notes
 
-- Two distinct, laser-cut 3 mm MDF deck plates, **one each**. `Part21.SLDPRT` is the upper chassis source, not an unknown extra part.
-- Motor bracket `motor_mount_bracket`: print **four identical units in ABS**, two for each motor (top/bottom).
-- Magnet shaft coupler: make **two in ABS-like resin**, one per drive wheel for correctly aligning the rotating magnet to its AS5600 encoder. The coupler is **not itself the magnet**.
-- AS5600 bracket: **two** PLA+ printed mounts.
-- Camera mount and LiDAR mount: **one of each** in PLA+.
-- Fan guide: **one complete interlocking MDF assembly** routing airflow from a fan beneath Raspberry Pi 5. The provided information does not specify the count of individual MDF pieces, fan's exact model/size or the fan's electrical specifications; these are **not inferred** from the number of CAD/PDF files.
-- Filament colors, slicing parameters, fasteners, tolerances, explicit assembly drawings and board/cutting layouts are not independently established in the supplied files.
-- Counts are physical quantities to fabricate for one robot, **not** numbers of distinct digital files.
+- **Chassis:** two separate laser-cut 3 mm MDF plates (one lower and one upper).
+- **Motor mounts:** four identical ABS brackets, two per motor, installed in a mirrored/symmetrical arrangement.
+- **Encoder couplers:** two ABS-like resin interfaces between rotating motor shafts and encoder magnets; the couplers are distinct from the magnets themselves.
+- **AS5600 mounts:** two PLA+ printed sensor brackets.
+- **Camera and LiDAR mounts:** one PLA+ printed mount for each sensor.
+- **Thermal airflow guide:** one multipart, interlocking 3 mm MDF housing guiding fan airflow under Raspberry Pi 5. The number of individual MDF pieces and the fan model are not established in the repository.
 
-## Formats and reproduction
+## Source formats and usage
 
-- `.SLDPRT`: editable SolidWorks part source.
-- `.STL`: triangulated model for preparing 3D-printed components. These do not replace editable CAD.
-- `.pdf`: design drawing or cut reference, not necessarily ready-to-machine CNC/G-code.
-- The supplied repository does not contain a native SolidWorks `.SLDASM` assembly. The fan assembly is described through the provided model/drawing pair.
+- **`.SLDPRT`**: editable SolidWorks component design.
+- **`.STL`**: triangular mesh export suitable for preparing 3D prints.
+- **`.pdf`**: drawing or cutting reference.
+- This source snapshot does not include a native `.SLDASM` assembly, complete fastener inventory or validated printing profiles. Verify source-to-drawing agreement, dimensions, external CAD references and fits before reproducing hardware.
 
-Before producing hardware, check dimensions, mating fit, part orientation and source-to-drawing consistency in SolidWorks; file renaming does not constitute geometric validation.
-
-For thesis links, use the fixed commit of the selected branch. GitHub repository privacy may require reviewer invitations.
+For stable thesis citations, use the final selected revision's commit SHA. Repository access remains subject to its private visibility.
