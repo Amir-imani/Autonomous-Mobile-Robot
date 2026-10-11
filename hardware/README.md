@@ -1,53 +1,22 @@
-# Hardware
+# Electrical design sources
 
-Hardware design files developed for the autonomous mobile robot are organized by custom PCB or electrical subsystem.
+Five custom electrical boards for the autonomous mobile robot are stored here. For a compact table of **every board's schematic, PCB, project file, and available manufacturing outputs**, see [Appendix B — Electrical design index](../docs/APPENDIX_HARDWARE_INDEX.md).
 
-## Boards currently available
+## Boards and documentation
 
-### Raspberry Pi Pico Carrier / Header Board
+| Board | Purpose | Detailed notes |
+|---|---|---|
+| [Main power distribution](main_power_distribution/) | Input routing, fuse and transient protection, INA monitor interfaces | [README](main_power_distribution/README.md) |
+| [Motor power distribution](motor_power_distribution/) | Fused motor power routing and measurement interfaces | [README](motor_power_distribution/README.md) |
+| [Raspberry Pi Pico carrier](pico_carrier_board/) | RP2040 I/O/power breakout to robot subsystems | [README](pico_carrier_board/README.md) |
+| [Raspberry Pi 5 overvoltage protection](raspberry_pi5_overvoltage_protection/) | Fuse, TVS and crowbar-style protection design | [README](raspberry_pi5_overvoltage_protection/README.md) |
+| [STM8 fan/temperature controller](stm8_fan_controller/) | NTC input and dual fan-PWM electronics | [README](stm8_fan_controller/README.md) |
 
-[Open the Pico carrier board directory](pico_carrier_board/)
+Each directory's `source/` has the editable KiCad `.kicad_pro`, `.kicad_sch` and `.kicad_pcb` trio.
 
-Included:
+## Available outputs and limitations
 
-- KiCad project, schematic, and PCB layout
-- Complete two-layer Gerber set
-- PTH and NPTH drill files
-- Top and bottom 3D renders
-- PCB Editor layout image
-
-### Raspberry Pi 5 Overvoltage Protection Board
-
-[Open the Raspberry Pi 5 protection board directory](raspberry_pi5_overvoltage_protection/)
-
-Included:
-
-- KiCad project, schematic, and PCB layout
-- Complete two-layer Gerber set
-- PTH and NPTH drill files
-- 3D PCB render
-- Schematic view
-- README describing the protection role and thesis-use notes
-
-Additional robot PCBs, BOMs, fabrication notes, and assembly documentation will be added here as their final design snapshots are prepared.
-
-### STM8 Dual-Channel Temperature and Fan Controller
-
-[Open the STM8 fan controller directory](stm8_fan_controller/)
-
-Included:
-- Editable KiCad project, schematic and PCB design
-- One-page PDF schematic
-- Top-side 3D board render
-
-**Thesis status:** Board fabricated and mounted on the robot, but not used for active control or experimental validation. Gerber, drill, BOM and firmware were not supplied with this package.
-
-### Main Power Distribution Board
-
-[Open main power board](main_power_distribution/) — power input, fuse protection, distribution and INA-module measurement mounting. Original KiCad project, schematic and PCB source.
-
-### Motor Power Distribution Board
-
-[Open motor power board](motor_power_distribution/) — fused motor power routing and INA-module measurement mounting. Original KiCad project, schematic and PCB source.
-
-For these two boards, photographs, Gerber/drill sets and BOMs were not included in the supplied ZIPs. They can be added separately after final review.
+- Pico carrier and Pi 5 protection directories include Gerber/drill exports and images.
+- STM8 directory includes a single-page schematic PDF and a 3D image, but no STM8 firmware in this repository. This board was fabricated and mounted, **not run as a validated active subsystem in the thesis experiments**.
+- Main/motor distribution boards have the editable KiCad triplets, but no packaged Gerber/drill exports, board photographs or structured BOMs.
+- A KiCad schematic or Gerber package alone does not demonstrate ERC/DRC clearance or the tested electrical behavior. Confirm the as-built revision and rerun checks before manufacture.
