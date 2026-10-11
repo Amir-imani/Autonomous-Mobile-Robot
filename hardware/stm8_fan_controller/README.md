@@ -12,7 +12,7 @@ A custom thermal-management PCB for the autonomous mobile robot, based on the ST
 
 ## Thesis implementation status
 
-**Hardware designed, fabricated, and mounted on the robot; not used as an active subsystem in the thesis experiments.** The schematics and PCB demonstrate the proposed thermal-management interface, but the board's actual temperature-feedback control, fan PWM response, UART exchange with the Pico, and RGB state logic must **not** be described as experimentally validated. No STM8 firmware is included in this upload.
+**Hardware designed, fabricated, and mounted on the robot; not used as an active subsystem in the thesis experiments.** The schematics and PCB demonstrate the proposed thermal-management interface, but the board's actual temperature-feedback control, fan PWM response, UART exchange with the Pico, and RGB state logic must **not** be described as experimentally validated. The design repository documents the board at schematic and PCB level; active firmware-level operation is outside the reported experimental evaluation.
 
 ## Files
 
@@ -30,6 +30,6 @@ A custom thermal-management PCB for the autonomous mobile robot, based on the ST
 
 [View schematic PDF](schematic/Fan_robot_V3.pdf)
 
-## Remaining artifacts
+## Fabrication and verification
 
-Fabrication Gerbers, drill files, BOM, assembly drawing and STM8 firmware were **not supplied** in this package. They can be added when available. Do not assume the KiCad files themselves certify manufacturability; perform ERC/DRC and check parts/footprints prior to production.
+Review footprints, connections, and thermal/power ratings using the schematic and PCB, and run ERC/DRC before fabrication. This documentation describes the circuit design and its installed role, not a measured closed-loop thermal-control performance.
