@@ -9,6 +9,7 @@ This repository contains the code, electronic design sources, and mechanical mod
 - **[Software architecture and complete source guide](docs/SOFTWARE_GUIDE.md)** — subsystem flow, source-file descriptions, dependencies, how to navigate/run the code, and evidence limitations.
 - **[Appendix A source index](docs/APPENDIX_CODE_INDEX.md)** — compact software source links for the thesis.
 - **[Appendix B electrical design index](docs/APPENDIX_HARDWARE_INDEX.md)** — five circuit schematics, KiCad projects, PCB layouts and available fabrication outputs.
+- **[Appendix C mechanical design index](docs/APPENDIX_MECHANICAL_INDEX.md)** — SolidWorks parts, drawings, manufacture quantities and materials.
 - **[Code overview](code/README.md)** — package entry points.
 - **[Experimental methodology](code/experiments/README.md)** — reproducible source checks, host emulations and hardware prerequisites.
 
