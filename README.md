@@ -1,52 +1,33 @@
 # Autonomous Mobile Robot
 
-Source repository for the undergraduate thesis project:
+Thesis project: **Design and Construction of a Mobile Robot with Intelligent Path Planning in Dynamic Environments**.
 
-**Design and Construction of a Mobile Robot with Intelligent Path Planning in Dynamic Environments**
+This repository contains the code, electronic design sources, and mechanical models for a differential-drive mobile robot. The software separates time-sensitive low-level control (RP2040), on-board ROS 2 integration (Raspberry Pi 5), and remote vision inference (external compute).
 
-The project implements a differential-drive mobile robot with a layered architecture:
+## Start here
 
-- **Low-level control:** RP2040 / Raspberry Pi Pico
-- **On-board computing:** Raspberry Pi 5 + ROS 2
-- **Remote compute:** GPU-oriented distributed vision processing
-- **Navigation infrastructure:** odometry, LiDAR scan aggregation, TF/URDF, and preliminary SLAM integration
-- **Experimental evaluation:** communication, control, offloading, timing, and stress-test tooling
+- **[Software architecture and complete source guide](docs/SOFTWARE_GUIDE.md)** — subsystem flow, source-file descriptions, dependencies, how to navigate/run the code, and evidence limitations.
+- **[Appendix A source index](docs/APPENDIX_CODE_INDEX.md)** — compact links for the thesis.
+- **[Code overview](code/README.md)** — package entry points.
+- **[Experimental methodology](code/experiments/README.md)** — reproducible source checks, host emulations and hardware prerequisites.
 
 ## Repository layout
 
 ```text
 code/
-  firmware/pico/  RP2040 firmware and Neuro-PID training
-  ros2/           ROS 2 packages, robot description, camera and vision nodes
-  experiments/    Reproducible hardware-free benchmark suite
-
-hardware/         Schematics, PCB sources, BOM, and fabrication files
-mechanical/       CAD, STL, and mechanical drawings
-results/          Curated thesis evaluation outputs
-docs/             Thesis-facing documentation and appendix indexes
+  firmware/pico/       RP2040 firmware, drivers, Neuro-PID training
+  ros2/                Six ROS 2 packages: bridge, model, camera, GPU inference, messages, testbench
+  experiments/         Source checks, host benchmarks, controlled emulation and analysis
+hardware/              KiCad schematics, PCBs and manufacturing outputs
+mechanical/            CAD and exported mechanical drawings
+results/               Thesis results directory
+docs/                  Appendix index and architecture guide
 ```
 
-## Source-code status
+## Implementation scope and evidence
 
-The thesis source-code snapshot is now organized under `code/`, including:
+The repository contains closed-loop wheel-control firmware, sensor interfaces, a Pico ↔ Pi binary bridge, wheel odometry, LiDAR sample aggregation, robot description, compressed-image publication, a GPU-capable inference node, and experiment tooling. It does **not** bundle a complete evaluated Nav2/SLAM deployment, a trained ONNX model, or verified physical GPU performance results. Host emulations and software tests must be reported separately from physical measurements.
 
-- Pico low-level firmware and hardware drivers
-- Neuro-PID runtime and offline training scripts
-- Pico ↔ Raspberry Pi 5 binary serial bridge
-- Differential odometry and servo-LiDAR scan generation
-- Xacro/URDF robot description and RViz configuration
-- Custom distributed-vision messages
-- Raspberry Pi camera publication node
-- Remote GPU inference node and academic telemetry
-- Vision testbench
-- Hardware-free audit, benchmark, offload, stress, and analysis tools
+## Stable thesis citations
 
-See [docs/APPENDIX_CODE_INDEX.md](docs/APPENDIX_CODE_INDEX.md) for the thesis-facing source index.
-
-## Important scope note
-
-The repository snapshot does not claim a complete Nav2/SLAM deployment or measured GPU inference performance. Hardware-dependent and preliminary subsystems are documented according to the evidence available in the thesis.
-
-## Thesis snapshot
-
-A fixed release/tag will be created at final thesis submission so thesis hyperlinks can target an immutable revision rather than the moving `main` branch.
+For final thesis citations, prefer a full commit-SHA URL (a fixed snapshot) instead of a moving `main` link. A release tag is optional and should only be cited after it actually exists. The repository is private; reviewers need authorized GitHub access.
