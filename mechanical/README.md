@@ -13,15 +13,6 @@ Custom mechanical parts of the differential-drive robot are organized by assembl
 
 The fan/airflow guide has an **unknown count of individual panels** in its interlocking assembly; do not treat one complete assembly as one laser-cut panel.
 
-## Original-to-new filename correspondence
+## Design records and use
 
-- `1.pdf` + `2.SLDPRT` → `chassis/lower_deck/lower_chassis_plate.*`
-- `2.pdf` + `Part21.SLDPRT` → `chassis/upper_deck/upper_chassis_plate.*`
-- `4.1.SLDPRT`, `4.1.STL`, `motor.pdf` → `motor_mounts/motor_mount_bracket.*`
-- `mag.SLDPRT`, `mag.STL`, `magnet.pdf` → `encoder_couplers/magnet_shaft_coupler.*`
-- `AS5600.*` → `sensor_mounts/as5600_encoder_mount.*`
-- `camera.*`, `camera holder.pdf` → `sensor_mounts/camera_mount.*`
-- `LiDAR.*`, `LiDaR.pdf` → `sensor_mounts/lidar_mount.*`
-- `Side.SLDPRT` + `Fan1.pdf` → `thermal_airflow/raspberry_pi5_fan_duct.*`
-
-All relocated CAD and drawing files retain their original binary Git blobs. No source geometry, dimensions, print profiles or PDF pages were changed during renaming. SolidWorks external references, if any, should be rechecked when opening renamed models.
+Each part group contains its available editable SolidWorks sources (`.SLDPRT`), print mesh exports (`.STL`), and/or reference drawings (`.pdf`). The two 3 mm MDF chassis decks are separate pieces (one each). The fan duct is one interlocking MDF assembly whose number of individual panels is not specified. Confirm fits and SolidWorks references before fabrication.
