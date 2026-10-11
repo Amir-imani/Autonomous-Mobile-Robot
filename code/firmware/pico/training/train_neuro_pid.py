@@ -20,14 +20,14 @@ class NeuroPIDNetwork(nn.Module):
 
 class DCMotorSimulation:
     def __init__(self):
-        # استفاده از تنسور برای حفظ گراف محاسباتی
+        # Keep simulated state in the tensor computation graph
         self.current_rpm = torch.tensor(0.0)
         self.dt = torch.tensor(0.02)
         self.a = torch.tensor(0.85)
         self.b = torch.tensor(0.45)
 
     def step(self, pwm):
-        # استفاده از clamp به جای min/max پایتون
+        # Apply tensor-based saturation to the motor command
         pwm = torch.clamp(pwm, -100.0, 100.0)
         self.current_rpm = (self.a * self.current_rpm) + (self.b * pwm)
         return self.current_rpm
