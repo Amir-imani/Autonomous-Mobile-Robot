@@ -62,6 +62,3 @@ Before ordering a new production batch:
 
 For the thesis appendix, the most useful figures are the PCB Editor layout plus the top and bottom 3D renders. The complete KiCad source and manufacturing outputs remain in the repository so the board can be inspected independently of the thesis document.
 
-## Pending documentation
-
-A structured BOM and assembly/fabrication notes can be added when those files are finalized.
