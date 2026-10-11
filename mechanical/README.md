@@ -1,25 +1,27 @@
-# Mechanical Design — SolidWorks and Fabrication Files
+# Mechanical design — SolidWorks and manufacturing references
 
-CAD sources, STL meshes and PDF drawings for the custom robot chassis and mounting components are organized here. **[Appendix C mechanical index](../docs/APPENDIX_MECHANICAL_INDEX.md)** records each source filename, its part role, supported manufacturing quantity and material, and outstanding identification gaps.
+Custom mechanical parts of the differential-drive robot are organized by assembly, with consistent basenames for CAD sources, STL exports and PDF drawings. See [Appendix C index](../docs/APPENDIX_MECHANICAL_INDEX.md) for **quantity, material, purpose and original filenames**.
 
-## Summary for one robot
+| Directory | Part group | Make per robot | Material |
+|---|---|---:|---|
+| [`chassis/lower_deck/`](chassis/lower_deck/) | First chassis deck | 1 | 3 mm MDF, laser cut |
+| [`chassis/upper_deck/`](chassis/upper_deck/) | Second chassis deck | 1 | 3 mm MDF, laser cut |
+| [`motor_mounts/`](motor_mounts/) | Four identical motor brackets | 4 | ABS, 3D printed |
+| [`encoder_couplers/`](encoder_couplers/) | Magnet-to-shaft interfaces | 2 | ABS-like printed resin |
+| [`sensor_mounts/`](sensor_mounts/) | AS5600 mounts (2), camera mount (1), LiDAR mount (1) | 4 | PLA+, 3D printed |
+| [`thermal_airflow/`](thermal_airflow/) | Interlocking Raspberry Pi 5 airflow guide for fan | 1 assembly (multipart) | 3 mm MDF, laser cut |
 
-| Component | Qty | Material |
-|---|---:|---|
-| Upper and lower chassis sheets | 2 (one each) | 3 mm laser-cut sheet/board; exact board grade not recorded |
-| Motor brackets (`4.1`, also `motor.pdf`) | 4 (two per motor) | ABS |
-| Magnet/shaft adaptors (`mag`) | 2 | ABS-like resin |
-| AS5600 sensor brackets | 2 | PLA+ |
-| Camera holder | 1 | PLA+ |
-| LiDAR holder | 1 | PLA+ |
-| Raspberry Pi 5 underside fan/airflow assembly | 1 multi-part unit | Material/subpart count not recorded |
+The fan/airflow guide has an **unknown count of individual panels** in its interlocking assembly; do not treat one complete assembly as one laser-cut panel.
 
-The file `Part21.SLDPRT` and the exact upper/lower naming of the chassis files remain unresolved. Their presence is documented without guessing a quantity or material.
+## Original-to-new filename correspondence
 
-## Source formats
+- `1.pdf` + `2.SLDPRT` → `chassis/lower_deck/lower_chassis_plate.*`
+- `2.pdf` + `Part21.SLDPRT` → `chassis/upper_deck/upper_chassis_plate.*`
+- `4.1.SLDPRT`, `4.1.STL`, `motor.pdf` → `motor_mounts/motor_mount_bracket.*`
+- `mag.SLDPRT`, `mag.STL`, `magnet.pdf` → `encoder_couplers/magnet_shaft_coupler.*`
+- `AS5600.*` → `sensor_mounts/as5600_encoder_mount.*`
+- `camera.*`, `camera holder.pdf` → `sensor_mounts/camera_mount.*`
+- `LiDAR.*`, `LiDaR.pdf` → `sensor_mounts/lidar_mount.*`
+- `Side.SLDPRT` + `Fan1.pdf` → `thermal_airflow/raspberry_pi5_fan_duct.*`
 
-- `.SLDPRT` — editable SolidWorks parts.
-- `.STL` — mesh exports for additive manufacturing.
-- `.pdf` — exported mechanical drawings and references.
-
-A native `.SLDASM` assembly and consolidated fastener/material BOM are not included in this snapshot. The directory contains CAD/design artifacts and must not be interpreted as a complete manufacturing verification record.
+All relocated CAD and drawing files retain their original binary Git blobs. No source geometry, dimensions, print profiles or PDF pages were changed during renaming. SolidWorks external references, if any, should be rechecked when opening renamed models.
