@@ -50,6 +50,3 @@ The schematic snapshot includes the 5.1 V Zener threshold element, a 5 A fuse, a
 
 For the thesis appendix, the schematic view and 3D PCB render are the most useful visual artifacts. The complete KiCad and manufacturing files are preserved here for reproducibility.
 
-## Pending documentation
-
-A structured BOM and any final assembly/fabrication notes can be added when finalized.
